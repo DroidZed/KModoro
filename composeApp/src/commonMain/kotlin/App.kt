@@ -1,4 +1,8 @@
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.navigator.CurrentScreen
 import cafe.adriel.voyager.navigator.Navigator
@@ -20,13 +24,7 @@ fun App() {
     KModoroTheme {
         Navigator(
             FirstScreen(),
-            onBackPressed = {
-                true // won't pop the current screen
-                // true will pop, default behavior
-            }
-            // To disable:
-            // onBackPressed = null
-        ) {
+            ) {
             Scaffold(
                 topBar = { KModoroAppBar() },
                 content = { CurrentScreen() },

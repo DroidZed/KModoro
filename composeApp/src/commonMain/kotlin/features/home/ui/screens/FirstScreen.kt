@@ -20,7 +20,7 @@ class FirstScreen : Screen {
 
         Center {
             Column {
-                Text("Hi !")
+                Text("Hi, You're at the level: ${navigator.level} !")
 
                 Button(onClick = { navigator.push(DashboardScreen()) }) {
                     Text("Go to dashboard")
