@@ -1,30 +1,23 @@
 package features.home.ui.screens
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
 import core.components.Center
 import features.home.ui.viewmodels.HomeViewModel
 
-class FirstScreen : Screen {
+class DashboardScreen : Screen {
     @Composable
     override fun Content() {
         val screenModel = getScreenModel<HomeViewModel>()
 
-        val navigator = LocalNavigator.currentOrThrow
-
         Center {
-            Column {
-                Text("Hi !")
+            Text("Dashboard lol !")
 
-                Button(onClick = { navigator.push(DashboardScreen()) }) {
-                    Text("Go to dashboard")
-                }
+            Column {
+
             }
         }
     }
