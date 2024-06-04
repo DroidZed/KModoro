@@ -16,15 +16,16 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     jvm("desktop")
-    
+
     sourceSets {
         val desktopMain by getting
-        
+
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -33,6 +34,19 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
+            // NAVIGATION
+            implementation(libs.voyager.navigator)
+            implementation(libs.voyager.screenmodel)
+            implementation(libs.voyager.bottom.sheet.navigator)
+            implementation(libs.voyager.tab.navigator)
+            implementation(libs.voyager.transitions)
+            implementation(libs.voyager.koin)
+
+            // DI
+            implementation(libs.koin.core.coroutines)
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
