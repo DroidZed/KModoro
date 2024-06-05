@@ -1,17 +1,22 @@
-package features.home.ui.screens
+package tn.droidzed.kmodoro.features.home.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.core.screen.uniqueScreenKey
 import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import core.components.Center
-import features.home.ui.viewmodels.HomeViewModel
+import tn.droidzed.kmodoro.core.config.ParcelableScreen
+import tn.droidzed.kmodoro.features.home.ui.viewmodels.HomeViewModel
 
-class FirstScreen : Screen {
+
+class WelcomeScreen : ParcelableScreen {
+
+    override val key = uniqueScreenKey
+
     @Composable
     override fun Content() {
         val screenModel = getScreenModel<HomeViewModel>()

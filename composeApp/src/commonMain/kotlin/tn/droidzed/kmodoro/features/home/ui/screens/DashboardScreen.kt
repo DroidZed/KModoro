@@ -1,16 +1,16 @@
-package features.home.ui.screens
+package tn.droidzed.kmodoro.features.home.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import core.components.Center
-import features.home.ui.viewmodels.HomeViewModel
+import tn.droidzed.kmodoro.core.config.ParcelableScreen
+import tn.droidzed.kmodoro.features.home.ui.viewmodels.HomeViewModel
 
-class DashboardScreen : Screen {
+class DashboardScreen : ParcelableScreen {
     @Composable
     override fun Content() {
         val screenModel = getScreenModel<HomeViewModel>()
@@ -19,8 +19,8 @@ class DashboardScreen : Screen {
 
         Center {
             Column {
-            Text("Dashboard lol !")
-            Text("Hi, You're at the level: ${navigator.level} !")
+                Text("Dashboard lol !")
+                Text("Hi, You're at the level: ${navigator.level} !")
 
             }
         }
