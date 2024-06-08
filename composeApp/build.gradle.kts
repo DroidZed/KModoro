@@ -33,6 +33,7 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.androidx.compose)
+            implementation(libs.dayandnight.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -45,7 +46,6 @@ kotlin {
             // NAVIGATION
             implementation(libs.voyager.navigator)
             implementation(libs.voyager.screenmodel)
-            implementation(libs.voyager.bottom.sheet.navigator)
             implementation(libs.voyager.tab.navigator)
             implementation(libs.voyager.transitions)
             implementation(libs.voyager.koin)
@@ -54,9 +54,13 @@ kotlin {
             implementation(libs.koin.core.coroutines)
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)
+
+            // COMPONENTS
+            implementation(libs.dayandnight)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+            implementation(libs.dayandnight.desktop)
         }
     }
 }
@@ -74,7 +78,7 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
     }
     packaging {
         resources {

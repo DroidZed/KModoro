@@ -1,23 +1,28 @@
 [versions]
-agp = "8.2.0"
+agp = "8.2.2"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
 androidx-activityCompose = "1.9.0"
-androidx-appcompat = "1.6.1"
+androidx-appcompat = "1.7.0"
 androidx-constraintlayout = "2.1.4"
 androidx-core-ktx = "1.13.1"
 androidx-espresso-core = "3.5.1"
 androidx-material = "1.12.0"
 androidx-test-junit = "1.1.5"
 compose-plugin = "1.6.10"
+dayandnight = "1.0.1"
 junit = "4.13.2"
 koin-bom = "3.6.0-wasm-alpha2"
 kotlin = "2.0.0"
-voyager = "1.0.0"
+voyager = "1.1.0-beta02"
 kotlinVersion = "1.9.0"
+buildkonfigGradlePlugin = "0.15.1"
 
 [libraries]
+dayandnight = { module = "com.akexorcist.kotlin.multiplatform:dayandnight", version.ref = "dayandnight" }
+dayandnight-android = { module = "com.akexorcist.kotlin.multiplatform:dayandnight-android", version.ref = "dayandnight" }
+dayandnight-desktop = { module = "com.akexorcist.kotlin.multiplatform:dayandnight-desktop", version.ref = "dayandnight" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose" }
 koin-core = { module = "io.insert-koin:koin-core" }
 koin-core-coroutines = { module = "io.insert-koin:koin-core-coroutines" }
@@ -32,7 +37,6 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 androidx-material = { group = "com.google.android.material", name = "material", version.ref = "androidx-material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
-voyager-bottom-sheet-navigator = { module = "cafe.adriel.voyager:voyager-bottom-sheet-navigator", version.ref = "voyager" }
 voyager-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voyager" }
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
 voyager-screenmodel = { module = "cafe.adriel.voyager:voyager-screenmodel", version.ref = "voyager" }

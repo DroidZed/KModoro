@@ -2,6 +2,7 @@ package tn.droidzed.kmodoro
 
 interface Platform {
     val name: String
+    val appVersion: String
 }
 
 expect fun getPlatform(): Platform
@@ -10,6 +11,6 @@ expect fun getPlatform(): Platform
 @OptionalExpectation
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-expect annotation class CommonParcelize()
+expect annotation class Parcelize()
 
-expect interface CommonParcelable
+expect interface Parcelable

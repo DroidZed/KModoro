@@ -1,15 +1,14 @@
 package tn.droidzed.kmodoro
 
 import android.os.Build
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 
 class AndroidPlatform : Platform {
     override val name: String = "Android ${Build.VERSION.SDK_INT}"
+    override val appVersion: String = "1.0.0"
 }
 
 actual fun getPlatform(): Platform = AndroidPlatform()
 
-actual typealias CommonParcelize = Parcelize
+actual typealias Parcelize = kotlinx.android.parcel.Parcelize
 
-actual typealias CommonParcelable = Parcelable
+actual typealias Parcelable = android.os.Parcelable
