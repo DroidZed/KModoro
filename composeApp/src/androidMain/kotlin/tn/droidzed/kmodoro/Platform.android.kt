@@ -1,9 +1,7 @@
 package tn.droidzed.kmodoro
 
-import android.os.Build
-
 class AndroidPlatform : Platform {
-    override val name: String = "Android ${Build.VERSION.SDK_INT}"
+    override val name: String = "Android"
     override val appVersion: String = "1.0.0"
 }
 

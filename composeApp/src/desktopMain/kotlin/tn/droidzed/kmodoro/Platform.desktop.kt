@@ -2,7 +2,7 @@ package tn.droidzed.kmodoro
 
 
 class JVMPlatform : Platform {
-    override val name: String = "Desktop ${System.getProperty("java.version")}"
+    override val name: String = "Desktop"
     override val appVersion: String = "1.0.0"
 }
 

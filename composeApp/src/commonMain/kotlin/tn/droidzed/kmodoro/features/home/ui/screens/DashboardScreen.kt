@@ -6,7 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.core.screen.ScreenKey
 import cafe.adriel.voyager.core.screen.uniqueScreenKey
-import cafe.adriel.voyager.koin.getScreenModel
+import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import core.components.Center
@@ -21,7 +21,7 @@ class DashboardScreen : BundledScreen {
 
     @Composable
     override fun Content() {
-        val screenModel = getScreenModel<HomeViewModel>()
+        val screenModel = koinScreenModel<HomeViewModel>()
 
         val navigator = LocalNavigator.currentOrThrow
 

@@ -51,10 +51,19 @@ kotlin {
 
             // COMPONENTS
             implementation(libs.dayandnight)
+
+            // Coroutines
+            implementation(libs.kotlinx.coroutines.core)
+
+            // Animations
+            implementation(libs.orbital)
+
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.dayandnight.desktop)
+            runtimeOnly(libs.kotlinx.coroutines.swing)
+
         }
     }
 }
