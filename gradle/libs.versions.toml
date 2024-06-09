@@ -15,9 +15,8 @@ dayandnight = "1.0.1"
 junit = "4.13.2"
 koin-bom = "3.6.0-wasm-alpha2"
 kotlin = "2.0.0"
-voyager = "1.1.0-beta02"
+voyager = "1.0.0"
 kotlinVersion = "1.9.0"
-buildkonfigGradlePlugin = "0.15.1"
 
 [libraries]
 dayandnight = { module = "com.akexorcist.kotlin.multiplatform:dayandnight", version.ref = "dayandnight" }

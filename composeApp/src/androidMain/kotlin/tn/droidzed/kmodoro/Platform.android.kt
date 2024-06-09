@@ -9,6 +9,4 @@ class AndroidPlatform : Platform {
 
 actual fun getPlatform(): Platform = AndroidPlatform()
 
-actual typealias Parcelize = kotlinx.android.parcel.Parcelize
-
-actual typealias Parcelable = android.os.Parcelable
+actual typealias JavaSerializable = java.io.Serializable

@@ -8,4 +8,4 @@ class JVMPlatform : Platform {
 
 actual fun getPlatform(): Platform = JVMPlatform()
 
-actual interface Parcelable
+actual typealias JavaSerializable = java.io.Serializable

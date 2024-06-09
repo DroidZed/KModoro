@@ -7,8 +7,6 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
-    id("kotlin-parcelize")
-    id("kotlin-kapt")
 }
 
 kotlin {
@@ -17,10 +15,6 @@ kotlin {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
             // https://youtrack.jetbrains.com/issue/KT-66448
-            freeCompilerArgs.addAll(
-                "-P",
-                "plugin:org.jetbrains.kotlin.parcelize:additionalAnnotation=tn.droidzed.kmodoro.CommonParcelize"
-            )
         }
     }
 
@@ -51,9 +45,9 @@ kotlin {
             implementation(libs.voyager.koin)
 
             // DI
+            implementation(libs.koin.core)
             implementation(libs.koin.core.coroutines)
             implementation(project.dependencies.platform(libs.koin.bom))
-            implementation(libs.koin.core)
 
             // COMPONENTS
             implementation(libs.dayandnight)

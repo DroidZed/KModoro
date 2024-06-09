@@ -7,10 +7,4 @@ interface Platform {
 
 expect fun getPlatform(): Platform
 
-@OptIn(ExperimentalMultiplatform::class)
-@OptionalExpectation
-@Target(AnnotationTarget.CLASS)
-@Retention(AnnotationRetention.BINARY)
-expect annotation class Parcelize()
-
-expect interface Parcelable
+expect interface JavaSerializable

@@ -1,38 +1,37 @@
-@file:Suppress("OPTIONAL_DECLARATION_USAGE_IN_NON_COMMON_SOURCE")
-
 package tn.droidzed.kmodoro.features.home.ui.screens
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import cafe.adriel.voyager.core.annotation.ExperimentalVoyagerApi
+import cafe.adriel.voyager.core.screen.ScreenKey
 import cafe.adriel.voyager.core.screen.uniqueScreenKey
-import cafe.adriel.voyager.koin.koinScreenModel
+import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import cafe.adriel.voyager.transitions.ScreenTransition
 import core.components.Center
-import tn.droidzed.kmodoro.Parcelize
-import tn.droidzed.kmodoro.core.config.ParcelableScreen
-import tn.droidzed.kmodoro.core.navigation.SlideHorizontalTransition
+import core.components.KModoroAppBar
+import tn.droidzed.kmodoro.core.config.BundledScreen
 import tn.droidzed.kmodoro.features.home.ui.viewmodels.HomeViewModel
 
 
-@OptIn(ExperimentalVoyagerApi::class)
-@Parcelize
-class DashboardScreen : ParcelableScreen, ScreenTransition by SlideHorizontalTransition() {
+class DashboardScreen : BundledScreen {
 
-    override val key = uniqueScreenKey
+    override val key: ScreenKey = uniqueScreenKey
 
     @Composable
     override fun Content() {
-        val screenModel = koinScreenModel<HomeViewModel>()
+        val screenModel = getScreenModel<HomeViewModel>()
 
         val navigator = LocalNavigator.currentOrThrow
 
-        Center {
-            Column {
-                Text("Dashboard lol !")
+        Scaffold(
+            topBar = { KModoroAppBar() }
+        ) {
+            Center {
+                Column {
+                    Text("Dashboard lol !")
+                }
             }
         }
     }
